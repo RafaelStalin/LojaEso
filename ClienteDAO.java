@@ -13,11 +13,12 @@ public ClienteDAO(Connection con){
 }
 
 public void cadastrar(Clientes cliente) throws Exception {
-   PreparedStatement c = con.prepareStatement("insert into clientes (clientesnome, clientesemail, clientescpf, clientestel) values (?,?,?,?)");
+   PreparedStatement c = con.prepareStatement("insert into clientes (clientesnome, clientesemail, clientescpf, clientestel, clientesend) values (?,?,?,?)");
    c.setString(1, cliente.getclientesnome());
    c.setString(2, cliente.getclientesemail());
    c.setInt(3, cliente.getclientescpf());
    c.setInt(4, cliente.getclientestel());
+   c.setString(5, cliente.getclientesend());
    c.executeUpdate();
    c.close();
 }
@@ -31,12 +32,13 @@ public void deletar(Clientes cliente) throws Exception {
 
 public void update(Clientes cliente) throws Exception {
    PreparedStatement c = 
-   con.prepareStatement("update clientes set clientesnome = ?, clientesemail = ?,  clientescpf = ?, clientestel = ? where idclientes = ?");
+   con.prepareStatement("update clientes set clientesnome = ?, clientesemail = ?,  clientescpf = ?, clientestel = ?, clientesend where idclientes = ?");
    c.setString(1, cliente.getclientesnome());
    c.setString(2, cliente.getclientesemail());
    c.setInt(3, cliente.getclientescpf());
    c.setInt(4, cliente.getclientestel());
-   c.setInt(5, cliente.getidclientes());
+   c.setString(5, cliente.getclientesend());
+   c.setInt(6, cliente.getidclientes());
    c.executeUpdate();
    c.close();
 }
@@ -53,6 +55,7 @@ public List<Clientes> listarTodos() throws Exception{
       cliente.setclientesemail(rs.getString("clientesemail"));
       cliente.setclientescpf(rs.getInt("clientescpf"));
       cliente.setclientestel(rs.getInt("clientestel"));
+      cliente.setclientesend(rs.getString("clientesend"));
       listaClientes.add(cliente);
    }
    rs.close();
