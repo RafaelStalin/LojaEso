@@ -4,6 +4,7 @@ public class Clientes {
 	private String clientesemail;
 	private String clientesnome;
 	private int clientescpf;
+	private String clientesend;
 	
 	public void setidclientes(int idclientes){
 		   this.idclientes = idclientes;
@@ -44,5 +45,12 @@ public class Clientes {
 		public int getclientescpf(){
 		   return this.clientescpf;
 		}
+		
+		public void setclientesend(String clientesend){
+			this.clientesend = clientesend;
+		}
+	
+		public String getclientesend(){
+		   return this.clientesend;
 	
 }
