@@ -1,0 +1,65 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Acesso a loja</title>
+</head>
+	
+	
+	
+	<body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="estilo.css"></link>
+
+
+
+<div id="fomulario">
+
+	<h3>Comércio Alem da Luz</h3>
+	
+	<p>Senha Usuario</p>
+	
+	<input type="password" id="obtersenha" class="form-control">
+	<p></p>
+    
+	<input type="button" id="btngerar" class="btn btn-success" value="Acessar Comércio">
+
+
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script>
+	$(document).ready(function(e) {
+	
+		$("#logar").click(function(e) {
+            		e.preventDefault();
+			
+			var senha = $("#obtersenha").val();
+			
+			$.post('validarusuario.php',{senha:senha},function(vlu){
+				
+				var valida = vlu;
+				
+				if(valida == "ok") {
+					$("#fomulario").show();
+					$("#login").hide();
+				}else {
+					alert("Verifique a senha.");	
+				}
+					
+			});
+        });	
+
+		
+		
+    });
+</script>
+
+
+</body>
+</html>

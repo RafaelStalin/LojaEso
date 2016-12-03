@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cadastrar Novo Cliente</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="estilo.css"></link>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/qunit/qunit-1.11.0.js"></script>
+
+<script type="text/javascript" src="js/mask/jquery.mask.js"></script>
+
+</head>
+	
+	
+	
+	<body>
+
+		<div id="painel">
+			<div class="row">
+			
+			<div class="col-md-4 menu">
+			
+				<h4>Cliente</h4>
+				
+					<ul>	
+						<li><a href="cad_cliente.html">Novo Cliente</a></li>
+						<li><a href="">Consultar Cliente</a></li>
+	
+					</ul>
+				
+					
+				<h4>Produtos</h4>
+				
+					<ul>	
+						<li><a href="cad_produto.html">Novo Produto</a></li>
+						<li><a href="">Consultar Produtos</a></li>
+						
+					
+					</ul>
+				
+				<h4>Compras</h4>
+				
+					<ul>	
+						<li><a href="nova_compra.html">Nova Compra</a></li>
+						<li><a href="">Consultar Compras</a></li>
+	
+					</ul>
+				
+				
+					
+					
+			</div>
+			
+			
+			<div class="col-md-8 conteudo">
+			
+				<h3>Novo Cliente</h3>
+				
+					<form>
+					
+					 <div class="form-group">
+							<label for="">Nome Cliente</label>
+							<input type="text" class="form-control" id="" placeholder="Digite o nome do novo cliente">
+						</div>
+						
+						 <div class="form-group">
+							<label for="">Email</label>
+							<input type="email" class="form-control" id="" placeholder="Email">
+						</div>
+						
+						
+						  <div class="form-group">
+							<label for="">CPF</label>
+							<input type="text" class="form-control" id="cpfcliente" placeholder="CPF">
+						</div>
+			
+						
+						<div class="form-group">
+							<label for="">Endereço</label>
+							<input type="texzt" class="form-control" id="" placeholder="Logradouro, Bairro, Numero">
+						</div>
+						
+						<div class="form-group">
+						
+							<input type="submit" class="btn btn-success" id="" value="Cadatrar Cliente">
+						</div>
+						
+					</form>
+			
+			</div>
+			
+			
+			
+			
+
+
+		</div>
+
+			<script>
+				$(document).ready(function(){
+					
+					$("#cpfcliente").mask("000.000.000-00");
+				
+				});
+			
+			</script>
+
+</body>
